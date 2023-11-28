@@ -1,0 +1,32 @@
+// Separando a flex box como uma função( podendo colocar parametros ):
+@mixin flexCenter($direction, $border-color) {
+    display: flex;
+    flex-direction: $direction;
+    border: 3px solid $border-color;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    height: 200px;
+}
+
+header {
+    @include flexCenter(column, blue);
+    background-color: $primeiro;
+    color: white;
+    // Agrupamento;
+    button {
+        background-color: $segundo;
+        color: $terceiro;
+        // Evento de cursor do mouse sempre dentro do elemento pai;
+        &:hover {
+            background-color: #808080;
+            color: #000000;
+        }
+    }
+    h1 {
+        color: #000000;
+    } 
+    p {
+        color: #000000;
+    }
+}
